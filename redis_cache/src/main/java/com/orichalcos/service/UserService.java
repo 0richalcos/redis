@@ -1,9 +1,9 @@
-package com.orichalcos.dao;
+package com.orichalcos.service;
 
 import com.orichalcos.entity.User;
 
 import java.util.List;
 
-public interface UserDao {
+public interface UserService {
     List<User> findAll();
 }
