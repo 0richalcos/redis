@@ -20,4 +20,4 @@ mybatis:
 
 logging:
   level:
-    com.orichalcos.dao: debug
+    com.orichalcos.mapper: debug

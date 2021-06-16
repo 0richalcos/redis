@@ -13,5 +13,9 @@ public class TestUserService {
     @Test
     public void test() {
         userService.findAll().forEach(u -> System.out.println("u = " + u));
+
+        System.out.println("=================================================");
+
+        userService.findAll().forEach(u -> System.out.println("u = " + u));
     }
 }

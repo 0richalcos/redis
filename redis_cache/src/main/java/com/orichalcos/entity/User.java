@@ -8,6 +8,9 @@ import lombok.experimental.Accessors;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author Orichalcos
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
