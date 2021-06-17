@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orichalcos.mapper.RoleMapper">
+
+    <!--<cache type="com.orichalcos.cache.RedisCache"/>-->
+    <cache-ref namespace="com.orichalcos.mapper.UserMapper"/>
+    
+    <select id="findAll" resultType="Role">
+        select role_id, user_id, role_name
+        from t_role;
+    </select>
+
+    <update id="updateRole">
+        update t_role
+        set role_name="user2"
+        where role_id = "1"
+    </update>
+</mapper>

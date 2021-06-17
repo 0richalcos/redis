@@ -4,7 +4,23 @@
 
     <cache type="com.orichalcos.cache.RedisCache"/>
 
-    <select id="findAll" resultType="User">
-        select id,name,age,bir from t_user;
+    <resultMap id="UserResultMap" type="User">
+        <id property="userId" column="user_id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="bir" column="bir"/>
+        <collection property="roles" ofType="Role" >
+            <id property="roleId" column="role_id"/>
+            <result property="userId" column="user_id"/>
+            <result property="roleName" column="role_name"/>
+        </collection>
+    </resultMap>
+
+    <select id="findAll" resultMap="UserResultMap">
+        select *
+        from t_user
+                 left join
+             t_role
+             on t_user.user_id = t_role.user_id;
     </select>
 </mapper>
